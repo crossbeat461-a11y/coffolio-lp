@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Open Cof-folio
+    url: https://my-coffee-app-mu.vercel.app/
+    about: Open the app (source stays private)
+  - name: K-Tech Studio
+    url: https://k-tech-lab.vercel.app/
+    about: Studio homepage

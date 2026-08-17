@@ -1,0 +1,32 @@
+name: アプリの不具合・要望
+description: Cof-folio アプリについて（ソースは非公開です）
+title: "[App] "
+labels: ["app"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        アプリ本体（https://my-coffee-app-mu.vercel.app/）の不具合や要望です。ソースコードはこのリポジトリにはありません。
+        App bugs and requests. Source code is not in this repository.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 種類 / Type
+      options:
+        - 不具合 / Bug
+        - 要望 / Feature
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: 内容 / Details
+      description: 何が起きたか、または欲しい機能を書いてください。
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: 環境 / Environment
+      description: 例: iPhone Safari / Android Chrome / ホーム画面から
+      placeholder: iPhone · Safari · Home Screen

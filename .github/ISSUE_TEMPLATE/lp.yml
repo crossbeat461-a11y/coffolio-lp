@@ -1,0 +1,26 @@
+name: LP の誤字・修正
+description: このランディングページの文言や表示について
+title: "[LP] "
+labels: ["lp"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        coffolio-lp.vercel.app の誤字、リンク切れ、表示の問題向けです。
+        Typos, broken links, or layout issues on the landing page.
+  - type: dropdown
+    id: lang
+    attributes:
+      label: 言語 / Language
+      options:
+        - 日本語
+        - English
+        - 両方 / Both
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: 内容 / Details
+    validations:
+      required: true

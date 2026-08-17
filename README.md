@@ -28,6 +28,7 @@ If the Vercel project name is not `coffolio-lp`, update `og:url`, `robots.txt`, 
 
 - App: https://my-coffee-app-mu.vercel.app/
 - Support: https://buymeacoffee.com/k_tech_studio
+- Issues: https://github.com/crossbeat461-a11y/coffolio-lp/issues
 - K-Tech Studio: https://k-tech-lab.vercel.app/
 
-GitHub for the app stays private. This LP does not link to Issues.
+The app GitHub repo stays private. Public feedback uses Issues on this LP repository.
