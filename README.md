@@ -32,3 +32,9 @@ If the Vercel project name is not `coffolio-lp`, update `og:url`, `robots.txt`, 
 - K-Tech Studio: https://k-tech-lab.vercel.app/
 
 The app GitHub repo stays private. Public feedback uses Issues on this LP repository.
+
+## Disclaimer / 免責（無保証）
+
+Cof-folio is provided **as is**, without warranty of any kind. The developer does not guarantee that it will work in every environment. Use at your own risk. See the app [Terms of Use](https://my-coffee-app-mu.vercel.app/terms.html).
+
+Cof-folio は **現状有姿（無保証）** で提供します。あらゆる環境での動作を保証しません。利用は自己責任です。詳細はアプリの [利用規約](https://my-coffee-app-mu.vercel.app/terms.html) を参照してください。
