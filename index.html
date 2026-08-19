@@ -400,6 +400,68 @@
             margin-bottom: 14px;
         }
 
+        .footer-meta {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            align-items: center;
+            margin-top: 14px;
+        }
+
+        .btn-inline-text {
+            background: none;
+            border: none;
+            color: #a1887f;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-family: inherit;
+        }
+
+        #policy-box {
+            display: none;
+            text-align: left;
+            background: var(--white);
+            color: var(--primary);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 30px auto 0;
+            max-width: 800px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        #policy-box h3 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 10px;
+            margin: 0 0 25px;
+        }
+
+        .policy-content h4 {
+            color: var(--primary);
+            margin: 20px 0 10px;
+            border-left: 4px solid var(--gold);
+            padding-left: 10px;
+        }
+
+        .policy-content p {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            color: var(--muted);
+        }
+
+        .policy-close {
+            background: var(--primary);
+            color: var(--cream);
+            border: none;
+            padding: 12px 35px;
+            cursor: pointer;
+            border-radius: 25px;
+            font-weight: 600;
+            font-family: inherit;
+        }
+
         .disclaimer {
             max-width: 42rem;
             margin: 0 auto 12px;
@@ -668,11 +730,40 @@
             </div>
             <p class="disclaimer lang-ja">Cof-folio は粕谷哲氏および Philocoffea 社の公式アプリではありません。4:6 メソッドは氏の抽出理論に基づく非公式の再現です。</p>
             <p class="disclaimer lang-en">Cof-folio is not an official app of Tetsu Kasuya or Philocoffea. The 4:6 guide is an unofficial recreation of his brewing theory.</p>
-            <p>Cof-folio v2.8.8 · © 2026 K-Tech Studio</p>
+            <p>Cof-folio v2.8.8 · &copy; 2026 k-Tech Studio. Stay curious.</p>
+            <div class="footer-meta">
+                <button type="button" onclick="togglePolicy()" class="btn-inline-text">About this site</button>
+            </div>
+
+            <div id="policy-box">
+                <h3>About this site</h3>
+                <p style="font-size: 0.85rem;">利用者の責任において使用してください。損害について一切の責任を負いません。</p>
+                <div class="policy-content">
+                    <h4>プライバシーポリシー</h4>
+                    <p>当サイトでは、Googleによるアクセス解析ツール「Googleアナリティクス」を使用しています。Cookie で収集されるデータは匿名であり、個人を特定するものではありません。Cof-folio の抽出記録は端末内にのみ保存され、外部サーバーへ送信されません。</p>
+
+                    <h4>免責事項</h4>
+                    <p>Cof-folio は粕谷哲氏および Philocoffea 社の公式アプリではありません。4:6 メソッドは氏の抽出理論に基づく非公式の再現です。</p>
+                    <p>掲載内容は正確な情報の提供に努めていますが、正確性や安全性を保証するものではありません。掲載内容によって生じた損害等の責任を負いかねますのでご了承ください。</p>
+
+                    <h4>お問い合わせ</h4>
+                    <p>不具合報告・機能要望は <a href="https://github.com/crossbeat461-a11y/coffolio-lp/issues" target="_blank" rel="noopener noreferrer">GitHub Issues</a>、または <a href="https://note.com/ktech_dev" target="_blank" rel="noopener noreferrer">note</a>・<a href="https://x.com/K_Tech_Dev" target="_blank" rel="noopener noreferrer">X</a> よりご連絡ください。</p>
+                </div>
+                <div style="text-align: center; margin-top: 40px;">
+                    <button type="button" onclick="togglePolicy()" class="policy-close">閉じる</button>
+                </div>
+            </div>
         </div>
     </footer>
 
     <script>
+        function togglePolicy() {
+            const box = document.getElementById('policy-box');
+            const show = box.style.display !== 'block';
+            box.style.display = show ? 'block' : 'none';
+            if (show) box.scrollIntoView({ behavior: 'smooth' });
+        }
+
         document.querySelectorAll('.lang-btn').forEach((btn) => {
             btn.addEventListener('click', () => {
                 document.documentElement.lang = btn.dataset.lang;
