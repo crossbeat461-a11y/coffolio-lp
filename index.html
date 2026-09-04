@@ -310,17 +310,60 @@
         .quote-band {
             background: var(--primary);
             color: var(--cream);
-            padding: 56px 0;
-            text-align: center;
+            padding: 64px 0;
         }
 
-        .quote-band p {
+        .quote-band-inner {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 48px 56px;
+            align-items: center;
+        }
+
+        .quote-copy p {
             font-family: "Playfair Display", serif;
             font-style: italic;
             font-size: clamp(1.25rem, 3vw, 1.85rem);
             line-height: 1.5;
-            margin: 0 auto;
-            max-width: 22em;
+            margin: 0;
+            max-width: 18em;
+        }
+
+        .quote-phone {
+            margin: 0;
+            width: min(248px, 38vw);
+        }
+
+        .quote-phone-frame {
+            background: #1a120c;
+            border-radius: 28px;
+            padding: 8px;
+            border: 1px solid rgba(198, 166, 100, 0.28);
+            box-shadow: 0 22px 44px rgba(0, 0, 0, 0.32);
+        }
+
+        .quote-phone-frame img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+        }
+
+        @media (max-width: 720px) {
+            .quote-band-inner {
+                grid-template-columns: 1fr;
+                justify-items: center;
+                text-align: center;
+                gap: 28px;
+            }
+
+            .quote-copy p {
+                max-width: 22em;
+            }
+
+            .quote-phone {
+                width: min(220px, 68vw);
+            }
         }
 
         .feature-grid {
@@ -535,16 +578,16 @@
         }
 
         .lp-qr-dock {
-            position: fixed;
-            right: 18px;
-            top: 50%;
+            position: absolute;
+            right: 24px;
+            top: 48%;
             transform: translateY(-50%);
-            z-index: 30;
-            width: 210px;
+            z-index: 4;
+            width: 196px;
             background: var(--white);
             color: var(--espresso);
             border-radius: 18px;
-            padding: 16px 14px 14px;
+            padding: 14px 12px 12px;
             box-shadow: var(--shadow);
             border: 1px solid #efe4d8;
             text-align: center;
@@ -580,22 +623,8 @@
             text-decoration: none;
         }
 
-        @media (max-width: 1200px) {
-            .lp-qr-dock {
-                position: relative;
-                right: auto;
-                top: auto;
-                transform: none;
-                width: auto;
-                max-width: 420px;
-                margin: -28px auto 0;
-                z-index: 2;
-            }
-
-            .lp-qr-dock img {
-                width: 120px;
-                height: 120px;
-            }
+        @media (max-width: 1100px) {
+            .lp-qr-dock { display: none; }
         }
     </style>
 </head>
@@ -636,22 +665,28 @@
                 <p class="hero-note lang-en">Records stay on your device. No account needed.</p>
             </div>
         </div>
+        <aside class="lp-qr-dock">
+            <a href="https://my-coffee-app-mu.vercel.app/" target="_blank" rel="noopener noreferrer">
+                <p class="lp-qr-kicker lang-ja">スマホで開く</p>
+                <p class="lp-qr-kicker lang-en">Open on phone</p>
+                <img src="images/coffolio-qr.png" alt="Cof-folio アプリの QR コード" width="140" height="140">
+            </a>
+            <p class="lang-ja">読み取って開く。初回はホーム画面に追加してください。</p>
+            <p class="lang-en">Scan to open. First time: add it to the Home Screen.</p>
+        </aside>
     </header>
 
-    <aside class="lp-qr-dock">
-        <a href="https://my-coffee-app-mu.vercel.app/" target="_blank" rel="noopener noreferrer">
-            <p class="lp-qr-kicker lang-ja">スマホで開く</p>
-            <p class="lp-qr-kicker lang-en">Open on phone</p>
-            <img src="images/coffolio-qr.png" alt="Cof-folio app QR code" width="140" height="140">
-        </a>
-        <p class="lang-ja">QR を読んだあと、初めての方はホーム画面に追加してください。Safari は共有 →「ホーム画面に追加」。Chrome は ⋮ →「ホーム画面に追加」。アイコンから開くとアプリのように使えます。</p>
-        <p class="lang-en">After you scan, first-time visitors should add Cof-folio to the Home Screen. Safari: Share → Add to Home Screen. Chrome: ⋮ → Add to Home Screen. Open the icon to use it like an app.</p>
-    </aside>
-
     <section class="quote-band">
-        <div class="container">
-            <p class="lang-ja">同じ豆でも、注ぎが変われば味は変わる。<br>手順を残し、味を残す。</p>
-            <p class="lang-en">The same beans can taste different if the pour changes.<br>Keep the method. Keep the taste.</p>
+        <div class="container quote-band-inner">
+            <div class="quote-copy">
+                <p class="lang-ja">同じ豆でも、注ぎが変われば味は変わる。<br>手順を残し、味を残す。</p>
+                <p class="lang-en">The same beans can taste different if the pour changes.<br>Keep the method. Keep the taste.</p>
+            </div>
+            <figure class="quote-phone">
+                <div class="quote-phone-frame">
+                    <img src="images/timer.jpg" width="1179" height="2389" alt="Cof-folio の抽出タイマー。いまの投と注湯量を表示" decoding="async">
+                </div>
+            </figure>
         </div>
     </section>
 
