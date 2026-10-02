@@ -1,6 +1,6 @@
 # Cof-folio — Landing Page
 
-Coffee journal and 4:6 brew guide. Official landing page for **Cof-folio** (v2.9.0).
+Coffee journal and 4:6 brew guide. Official landing page for **Cof-folio** (v2.9.1).
 
 ## Live URLs
 
